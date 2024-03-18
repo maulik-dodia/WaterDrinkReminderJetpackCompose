@@ -1,16 +1,22 @@
 package com.waterdrinkreminderjetpackcompose.screen
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -33,8 +39,7 @@ fun ProfileScreen() {
     ) {
         Column(
             modifier = Modifier
-                .weight(1.5f)
-                .background(color = Color.Blue),
+                .weight(1f),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -43,7 +48,7 @@ fun ProfileScreen() {
                 contentDescription = stringResource(id = R.string.profile_img),
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .size(200.dp)
+                    .size(150.dp)
                     .clip(shape = CircleShape),
             )
             Text(
@@ -64,17 +69,175 @@ fun ProfileScreen() {
         Column(
             modifier = Modifier
                 .padding(top = 20.dp)
-                .weight(2f)
-                .background(color = Color.Gray),
-            horizontalAlignment = Alignment.CenterHorizontally
+                .weight(2f),
+            horizontalAlignment = Alignment.Start
         ) {
             Text(
                 text = stringResource(id = R.string.label_profile_details),
                 textAlign = TextAlign.Start,
                 fontWeight = FontWeight.Bold,
                 color = Color.Blue,
-                modifier = Modifier.padding(16.dp)
+                modifier = Modifier.padding(
+                    top = 10.dp,
+                    bottom = 10.dp
+                )
             )
+            Row(
+                horizontalArrangement = Arrangement.Absolute.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        start = 16.dp,
+                        top = 5.dp,
+                        bottom = 5.dp
+                    )
+            ) {
+                Text(
+                    textAlign = TextAlign.Start,
+                    text = stringResource(id = R.string.label_gender)
+                )
+                var genderState by remember {
+                    mutableStateOf("")
+                }
+                TextField(modifier = Modifier.width(140.dp),
+                    placeholder = {
+                        Text(text = stringResource(id = R.string.label_gender))
+                    },
+                    value = genderState, onValueChange = {
+                        genderState = it
+                    })
+            }
+            Row(
+                horizontalArrangement = Arrangement.Absolute.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        start = 16.dp,
+                        top = 5.dp,
+                        bottom = 5.dp
+                    )
+            ) {
+                Text(
+                    textAlign = TextAlign.Start,
+                    text = stringResource(id = R.string.label_weight)
+                )
+                var weightState by remember {
+                    mutableStateOf("")
+                }
+                TextField(modifier = Modifier.width(140.dp),
+                    placeholder = {
+                        Text(text = stringResource(id = R.string.label_weight))
+                    },
+                    value = weightState, onValueChange = {
+                        weightState = it
+                    })
+            }
+            Row(
+                horizontalArrangement = Arrangement.Absolute.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        start = 16.dp,
+                        top = 5.dp,
+                        bottom = 5.dp
+                    )
+            ) {
+                Text(
+                    textAlign = TextAlign.Start,
+                    text = stringResource(id = R.string.label_height)
+                )
+                var heightState by remember {
+                    mutableStateOf("")
+                }
+                TextField(modifier = Modifier.width(140.dp),
+                    placeholder = {
+                        Text(text = stringResource(id = R.string.label_height))
+                    },
+                    value = heightState, onValueChange = {
+                        heightState = it
+                    })
+            }
+            Row(
+                horizontalArrangement = Arrangement.Absolute.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        start = 16.dp,
+                        top = 5.dp,
+                        bottom = 5.dp
+                    )
+            ) {
+                Text(
+                    textAlign = TextAlign.Start,
+                    text = stringResource(id = R.string.label_wake_up_time)
+                )
+                var wakeUpTimeState by remember {
+                    mutableStateOf("")
+                }
+                TextField(modifier = Modifier.width(140.dp),
+                    placeholder = {
+                        Text(text = stringResource(id = R.string.label_wake_up_time))
+                    },
+                    value = wakeUpTimeState, onValueChange = {
+                        wakeUpTimeState = it
+                    })
+            }
+            Row(
+                horizontalArrangement = Arrangement.Absolute.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        start = 16.dp,
+                        top = 5.dp,
+                        bottom = 5.dp
+                    )
+            ) {
+                Text(
+                    textAlign = TextAlign.Start,
+                    text = stringResource(id = R.string.label_bed_time)
+                )
+                var bedTimeState by remember {
+                    mutableStateOf("")
+                }
+                TextField(modifier = Modifier.width(140.dp),
+                    placeholder = {
+                        Text(text = stringResource(id = R.string.label_bed_time))
+                    },
+                    value = bedTimeState, onValueChange = {
+                        bedTimeState = it
+                    })
+            }
+            Row(
+                horizontalArrangement = Arrangement.Absolute.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        start = 16.dp,
+                        top = 5.dp,
+                        bottom = 5.dp
+                    )
+            ) {
+                Text(
+                    textAlign = TextAlign.Start,
+                    text = stringResource(id = R.string.label_goal)
+                )
+                var goalState by remember {
+                    mutableStateOf("")
+                }
+                TextField(modifier = Modifier.width(140.dp),
+                    placeholder = {
+                        Text(text = stringResource(id = R.string.label_goal))
+                    },
+                    value = goalState, onValueChange = {
+                        goalState = it
+                    })
+            }
         }
     }
 }
