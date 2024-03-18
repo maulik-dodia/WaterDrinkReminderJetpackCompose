@@ -14,6 +14,9 @@ jobs:
         
       - name: Setup Java JDK
         uses: actions/setup-java@v4.2.1
+        with:
+          java-version: '17'
+          distribution: 'adopt'
         
       - name: Build with Gradle
         run: ./gradlew build
@@ -23,9 +26,3 @@ jobs:
         with:
           name: WaterDrinkReminder-Jetpack-Compose.apk
           path: app/build/outputs/debug/apk/app-debug.apk
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
