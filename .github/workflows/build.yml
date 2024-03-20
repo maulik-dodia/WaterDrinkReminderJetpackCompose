@@ -25,4 +25,4 @@ jobs:
         uses: actions/upload-artifact@v4.3.1
         with:
           name: WaterDrinkReminder-Jetpack-Compose_1.apk
-          path: app/build/outputs/debug/apk/app-debug.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
