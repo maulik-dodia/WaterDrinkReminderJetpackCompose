@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">WaterDrinkReminder-Jetpack-Compose</string>
+
+    <!--Home-->
+    <string name="profile_img_small">Profile Image Small</string>
+    <string name="label_good_morning">Good Morning</string>
+    <!--Home-->
+
     <!--Profile Screen-->
     <string name="profile_img">Profile Image</string>
     <string name="user_name">Maulik Dodia</string>
