@@ -1,6 +1,7 @@
 package com.waterdrinkreminderjetpackcompose.screen
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -10,6 +11,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -25,6 +28,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -89,8 +93,7 @@ fun ProfileScreen() {
                     .fillMaxWidth()
                     .padding(
                         start = 16.dp,
-                        top = 5.dp,
-                        bottom = 5.dp
+                        top = 5.dp
                     )
             ) {
                 Text(
@@ -106,7 +109,14 @@ fun ProfileScreen() {
                     },
                     value = genderState, onValueChange = {
                         genderState = it
-                    })
+                    },
+                    keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+                    keyboardActions = KeyboardActions(
+                        onNext = {
+
+                        }
+                    )
+                )
             }
             Row(
                 horizontalArrangement = Arrangement.Absolute.SpaceBetween,
@@ -115,8 +125,7 @@ fun ProfileScreen() {
                     .fillMaxWidth()
                     .padding(
                         start = 16.dp,
-                        top = 5.dp,
-                        bottom = 5.dp
+                        top = 5.dp
                     )
             ) {
                 Text(
@@ -132,7 +141,13 @@ fun ProfileScreen() {
                     },
                     value = weightState, onValueChange = {
                         weightState = it
-                    })
+                    },
+                    keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+                    keyboardActions = KeyboardActions(
+                        onNext = {
+
+                        }
+                    ))
             }
             Row(
                 horizontalArrangement = Arrangement.Absolute.SpaceBetween,
@@ -141,8 +156,7 @@ fun ProfileScreen() {
                     .fillMaxWidth()
                     .padding(
                         start = 16.dp,
-                        top = 5.dp,
-                        bottom = 5.dp
+                        top = 5.dp
                     )
             ) {
                 Text(
@@ -158,7 +172,13 @@ fun ProfileScreen() {
                     },
                     value = heightState, onValueChange = {
                         heightState = it
-                    })
+                    },
+                    keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+                    keyboardActions = KeyboardActions(
+                        onNext = {
+
+                        }
+                    ))
             }
             Row(
                 horizontalArrangement = Arrangement.Absolute.SpaceBetween,
@@ -167,8 +187,7 @@ fun ProfileScreen() {
                     .fillMaxWidth()
                     .padding(
                         start = 16.dp,
-                        top = 5.dp,
-                        bottom = 5.dp
+                        top = 5.dp
                     )
             ) {
                 Text(
@@ -184,7 +203,13 @@ fun ProfileScreen() {
                     },
                     value = wakeUpTimeState, onValueChange = {
                         wakeUpTimeState = it
-                    })
+                    },
+                    keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+                    keyboardActions = KeyboardActions(
+                        onNext = {
+
+                        }
+                    ))
             }
             Row(
                 horizontalArrangement = Arrangement.Absolute.SpaceBetween,
@@ -193,8 +218,7 @@ fun ProfileScreen() {
                     .fillMaxWidth()
                     .padding(
                         start = 16.dp,
-                        top = 5.dp,
-                        bottom = 5.dp
+                        top = 5.dp
                     )
             ) {
                 Text(
@@ -210,7 +234,13 @@ fun ProfileScreen() {
                     },
                     value = bedTimeState, onValueChange = {
                         bedTimeState = it
-                    })
+                    },
+                    keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+                    keyboardActions = KeyboardActions(
+                        onNext = {
+
+                        }
+                    ))
             }
             Row(
                 horizontalArrangement = Arrangement.Absolute.SpaceBetween,
@@ -219,8 +249,7 @@ fun ProfileScreen() {
                     .fillMaxWidth()
                     .padding(
                         start = 16.dp,
-                        top = 5.dp,
-                        bottom = 5.dp
+                        top = 5.dp
                     )
             ) {
                 Text(
@@ -236,7 +265,13 @@ fun ProfileScreen() {
                     },
                     value = goalState, onValueChange = {
                         goalState = it
-                    })
+                    },
+                    keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
+                    keyboardActions = KeyboardActions(
+                        onDone = {
+
+                        }
+                    ))
             }
         }
     }
