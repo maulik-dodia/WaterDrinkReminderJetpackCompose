@@ -1,5 +1,18 @@
 <resources>
     <string name="app_name">WaterDrinkReminder-Jetpack-Compose</string>
+
+    <!--Home-->
+    <string name="profile_img_small">Profile Image Small</string>
+    <string name="label_good_morning">Good Morning</string>
+    <string name="label_100_ml">100ml</string>
+    <string name="label_200_ml">200ml</string>
+    <string name="label_300_ml">300ml</string>
+    <string name="label_400_ml">400ml</string>
+    <string name="label_2_pm">02:00 PM</string>
+    <string name="next_schedule">Next Schedule</string>
+    <string name="more_options">More Options</string>
+    <!--Home-->
+
     <!--Profile Screen-->
     <string name="profile_img">Profile Image</string>
     <string name="user_name">Maulik Dodia</string>
