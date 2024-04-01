@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.res.Resources.Theme
 import android.net.wifi.hotspot2.pps.HomeSp
 import android.widget.Space
+import android.widget.Switch
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -42,6 +43,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.waterdrinkreminderjetpackcompose.R
@@ -129,7 +131,13 @@ fun Home() {
 
             LazyColumn {
                 items(13) {
-                    NextScheduleItem()
+                    NextScheduleItem(
+                        switch = {
+                            Switch(checked = false, onCheckedChange = {
+
+                            })
+                        }
+                    )
                 }
             }
         }
@@ -137,7 +145,8 @@ fun Home() {
 }
 
 @Composable
-fun NextScheduleItem() {
+fun NextScheduleItem(img: (@Composable () -> Unit)? = null,
+                     switch: (@Composable () -> Unit)? = null) {
     Card(modifier = Modifier.padding(bottom = 5.dp)) {
         Row(modifier = Modifier
             .fillMaxWidth()
@@ -145,9 +154,12 @@ fun NextScheduleItem() {
             .padding(15.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween) {
-            Switch(checked = false, onCheckedChange = {
-
-            })
+            img?.let {
+                it()
+            }
+            switch?.let {
+                it()
+            }
             Column {
                 Text(text = stringResource(id = R.string.label_2_pm),
                     fontWeight = FontWeight.Bold,
