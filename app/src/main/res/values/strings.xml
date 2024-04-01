@@ -13,6 +13,11 @@
     <string name="more_options">More Options</string>
     <!--Home-->
 
+    <!--History-->
+    <string name="label_week">Week</string>
+    <string name="label_Month">Month</string>
+    <!--History-->
+
     <!--Profile Screen-->
     <string name="profile_img">Profile Image</string>
     <string name="user_name">Maulik Dodia</string>
