@@ -11,6 +11,9 @@
     <string name="label_2_pm">02:00 PM</string>
     <string name="next_schedule">Next Schedule</string>
     <string name="more_options">More Options</string>
+    <string name="label_home">Home</string>
+    <string name="label_search">Search</string>
+    <string name="label_info">Info</string>
     <!--Home-->
 
     <!--History-->
