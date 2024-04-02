@@ -14,4 +14,5 @@ val Pink40 = Color(0xFF7D5260)
 val lightBlue = Color(0xFFEDF9FE)
 val oceanBlue = Color(0xFF3A7889)
 val oceanBlueFont = Color(0xFF548998)
+val bottomNavBar = Color(0xFF35A2DD)
 /*Custom Colors*/
