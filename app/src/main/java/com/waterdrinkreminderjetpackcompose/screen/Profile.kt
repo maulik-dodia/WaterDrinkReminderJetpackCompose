@@ -46,6 +46,7 @@ fun ProfileScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .background(color = Color.White)
             .padding(16.dp)
     ) {
         Column(
@@ -80,7 +81,7 @@ fun ProfileScreen() {
                 contentDescription = stringResource(id = R.string.profile_img),
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .size(150.dp)
+                    .size(140.dp)
                     .clip(shape = CircleShape),
             )
             Text(
@@ -89,13 +90,15 @@ fun ProfileScreen() {
                     .fillMaxWidth()
                     .padding(top = 10.dp),
                 textAlign = TextAlign.Center,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                color = Color.Black
             )
             Text(
                 text = stringResource(id = R.string.user_email),
                 modifier = Modifier.fillMaxWidth(),
                 textAlign = TextAlign.Center,
-                fontWeight = FontWeight.Light
+                fontWeight = FontWeight.Light,
+                color = Color.Black
             )
         }
         Column(
@@ -126,14 +129,17 @@ fun ProfileScreen() {
             ) {
                 Text(
                     textAlign = TextAlign.Start,
-                    text = stringResource(id = R.string.label_gender)
+                    text = stringResource(id = R.string.label_gender),
+                    color = Color.Black
                 )
                 var genderState by remember {
                     mutableStateOf("")
                 }
                 TextField(modifier = Modifier.width(140.dp),
                     placeholder = {
-                        Text(text = stringResource(id = R.string.label_gender))
+                        Text(
+                            text = stringResource(id = R.string.label_gender)
+                        )
                     },
                     value = genderState, onValueChange = {
                         genderState = it
@@ -158,14 +164,17 @@ fun ProfileScreen() {
             ) {
                 Text(
                     textAlign = TextAlign.Start,
-                    text = stringResource(id = R.string.label_weight)
+                    text = stringResource(id = R.string.label_weight),
+                    color = Color.Black
                 )
                 var weightState by remember {
                     mutableStateOf("")
                 }
                 TextField(modifier = Modifier.width(140.dp),
                     placeholder = {
-                        Text(text = stringResource(id = R.string.label_weight))
+                        Text(
+                            text = stringResource(id = R.string.label_weight)
+                        )
                     },
                     value = weightState, onValueChange = {
                         weightState = it
@@ -189,14 +198,17 @@ fun ProfileScreen() {
             ) {
                 Text(
                     textAlign = TextAlign.Start,
-                    text = stringResource(id = R.string.label_height)
+                    text = stringResource(id = R.string.label_height),
+                    color = Color.Black
                 )
                 var heightState by remember {
                     mutableStateOf("")
                 }
                 TextField(modifier = Modifier.width(140.dp),
                     placeholder = {
-                        Text(text = stringResource(id = R.string.label_height))
+                        Text(
+                            text = stringResource(id = R.string.label_height)
+                        )
                     },
                     value = heightState, onValueChange = {
                         heightState = it
@@ -220,14 +232,17 @@ fun ProfileScreen() {
             ) {
                 Text(
                     textAlign = TextAlign.Start,
-                    text = stringResource(id = R.string.label_wake_up_time)
+                    text = stringResource(id = R.string.label_wake_up_time),
+                    color = Color.Black
                 )
                 var wakeUpTimeState by remember {
                     mutableStateOf("")
                 }
                 TextField(modifier = Modifier.width(140.dp),
                     placeholder = {
-                        Text(text = stringResource(id = R.string.label_wake_up_time))
+                        Text(
+                            text = stringResource(id = R.string.label_wake_up_time)
+                        )
                     },
                     value = wakeUpTimeState, onValueChange = {
                         wakeUpTimeState = it
@@ -251,14 +266,17 @@ fun ProfileScreen() {
             ) {
                 Text(
                     textAlign = TextAlign.Start,
-                    text = stringResource(id = R.string.label_bed_time)
+                    text = stringResource(id = R.string.label_bed_time),
+                    color = Color.Black
                 )
                 var bedTimeState by remember {
                     mutableStateOf("")
                 }
                 TextField(modifier = Modifier.width(140.dp),
                     placeholder = {
-                        Text(text = stringResource(id = R.string.label_bed_time))
+                        Text(
+                            text = stringResource(id = R.string.label_bed_time)
+                        )
                     },
                     value = bedTimeState, onValueChange = {
                         bedTimeState = it
@@ -282,14 +300,17 @@ fun ProfileScreen() {
             ) {
                 Text(
                     textAlign = TextAlign.Start,
-                    text = stringResource(id = R.string.label_goal)
+                    text = stringResource(id = R.string.label_goal),
+                    color = Color.Black
                 )
                 var goalState by remember {
                     mutableStateOf("")
                 }
                 TextField(modifier = Modifier.width(140.dp),
                     placeholder = {
-                        Text(text = stringResource(id = R.string.label_goal))
+                        Text(
+                            text = stringResource(id = R.string.label_goal)
+                        )
                     },
                     value = goalState, onValueChange = {
                         goalState = it
