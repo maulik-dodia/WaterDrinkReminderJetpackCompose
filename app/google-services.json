@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1056150517636",
+    "project_id": "waterdrinkreminderjcompose",
+    "storage_bucket": "waterdrinkreminderjcompose.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056150517636:android:7b60333c4c7fc090678fd1",
+        "android_client_info": {
+          "package_name": "com.waterdrinkreminderjetpackcompose"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2PvFDd4hSlPKAVC_-VgPagJQrtpPk8rA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

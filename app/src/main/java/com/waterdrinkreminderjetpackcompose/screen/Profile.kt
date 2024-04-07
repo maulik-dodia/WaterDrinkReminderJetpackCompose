@@ -1,5 +1,6 @@
 package com.waterdrinkreminderjetpackcompose.screen
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -14,6 +15,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -32,10 +34,15 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.google.firebase.Firebase
+import com.google.firebase.firestore.firestore
 import com.waterdrinkreminderjetpackcompose.R
 
 @Composable
 fun ProfileScreen() {
+
+    val db = Firebase.firestore
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -47,6 +54,27 @@ fun ProfileScreen() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            TextButton(
+                content = {
+                    Text(text = "Store Data")
+                }, onClick = {
+
+                    val user = hashMapOf(
+                        "first" to "Ada",
+                        "last" to "Lovelace",
+                        "born" to 1815
+                    )
+
+                    db.collection("Maulik")
+                        .add(user)
+                        .addOnSuccessListener { documentReference ->
+                            Log.d("mk", "DocumentSnapshot added with ID: ${documentReference.id}")
+                        }
+                        .addOnFailureListener { e ->
+                            Log.w("mk", "Error adding document", e)
+                        }
+                }
+            )
             Image(
                 painter = painterResource(id = R.drawable.profile_img),
                 contentDescription = stringResource(id = R.string.profile_img),
