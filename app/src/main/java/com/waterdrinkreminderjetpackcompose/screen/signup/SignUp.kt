@@ -37,7 +37,8 @@ import com.waterdrinkreminderjetpackcompose.R
 
 @Composable
 fun SignUpScreen(
-    signUpViewModel: SignUpViewModel = viewModel()
+    signUpViewModel: SignUpViewModel = viewModel(),
+    onSignInClick: () -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -212,7 +213,7 @@ fun SignUpScreen(
 
         Button(
             onClick = {
-
+                onSignInClick()
             }) {
             Text(
                 text = stringResource(id = R.string.label_sign_in)

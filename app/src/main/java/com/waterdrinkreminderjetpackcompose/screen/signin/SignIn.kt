@@ -37,7 +37,8 @@ import com.waterdrinkreminderjetpackcompose.R
 
 @Composable
 fun SignInScreen(
-    signInViewModel: SignInViewModel = viewModel()
+    signInViewModel: SignInViewModel = viewModel(),
+    onSignUpClick: () -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -139,7 +140,10 @@ fun SignInScreen(
                 passwordState = it
             },
             visualTransformation = PasswordVisualTransformation(),
-            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next, keyboardType = KeyboardType.Password),
+            keyboardOptions = KeyboardOptions(
+                imeAction = ImeAction.Next,
+                keyboardType = KeyboardType.Password
+            ),
             keyboardActions = KeyboardActions(
                 onNext = {
 
@@ -154,6 +158,21 @@ fun SignInScreen(
             }) {
             Text(
                 text = stringResource(id = R.string.label_sign_in)
+            )
+        }
+
+        Text(
+            modifier = Modifier.padding(10.dp),
+            text = stringResource(id = R.string.label_or),
+            color = Color.Black
+        )
+
+        Button(
+            onClick = {
+                onSignUpClick()
+            }) {
+            Text(
+                text = stringResource(id = R.string.label_sign_up)
             )
         }
     }
