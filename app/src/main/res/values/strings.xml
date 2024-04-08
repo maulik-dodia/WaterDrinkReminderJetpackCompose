@@ -9,6 +9,7 @@
     <string name="label_sign_up">Sign Up</string>
     <string name="label_or">or</string>
     <string name="label_sign_in">Sign In</string>
+    <string name="str_name_validate_error">Name cannot be empty!</string>
     <!--SignUp-->
 
     <!--SignIn-->
