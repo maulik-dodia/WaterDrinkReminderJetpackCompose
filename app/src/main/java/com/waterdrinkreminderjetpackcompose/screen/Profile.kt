@@ -32,17 +32,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
 import com.waterdrinkreminderjetpackcompose.R
 
 @Composable
-fun ProfileScreen() {
-
+fun Profile() {
     val db = Firebase.firestore
-
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -324,10 +321,4 @@ fun ProfileScreen() {
             }
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun Preview() {
-    ProfileScreen()
 }
