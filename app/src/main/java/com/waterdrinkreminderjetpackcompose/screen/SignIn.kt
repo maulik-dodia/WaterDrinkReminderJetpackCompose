@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.sp
 import com.waterdrinkreminderjetpackcompose.R
 
 @Composable
-fun SignUpScreen() {
+fun SignInScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -41,34 +41,11 @@ fun SignUpScreen() {
             modifier = Modifier
                 .padding(bottom = 20.dp)
                 .fillMaxWidth(),
-            text = stringResource(id = R.string.label_create_account),
+            text = stringResource(id = R.string.str_login_account),
             color = Color.Black,
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Start
-        )
-
-        // Name field
-        var nameState by remember {
-            mutableStateOf("")
-        }
-        TextField(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(bottom = 20.dp),
-            placeholder = {
-                Text(
-                    text = stringResource(id = R.string.label_name)
-                )
-            },
-            value = nameState,
-            onValueChange = {
-                nameState = it
-            },
-            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
-            keyboardActions = KeyboardActions(onNext = {
-
-            })
         )
 
         // Email field
@@ -112,28 +89,15 @@ fun SignUpScreen() {
                 passwordState = it
             },
             keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
-            keyboardActions = KeyboardActions(onNext = {
+            keyboardActions = KeyboardActions(
+                onNext = {
 
-            })
+                }
+            )
         )
 
         Button(
             modifier = Modifier.fillMaxWidth(),
-            onClick = {
-
-            }) {
-            Text(
-                text = stringResource(id = R.string.label_sign_up)
-            )
-        }
-
-        Text(
-            modifier = Modifier.padding(10.dp),
-            text = stringResource(id = R.string.label_or),
-            color = Color.Black
-        )
-
-        Button(
             onClick = {
 
             }) {
