@@ -1,4 +1,4 @@
-package com.waterdrinkreminderjetpackcompose.screen
+package com.waterdrinkreminderjetpackcompose.screen.signin
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -8,7 +8,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -25,10 +29,14 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.waterdrinkreminderjetpackcompose.R
 
 @Composable
-fun SignInScreen() {
+fun SignInScreen(
+    signInViewModel: SignInViewModel = viewModel()
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -49,6 +57,7 @@ fun SignInScreen() {
         )
 
         // Email field
+        val emailValidation by signInViewModel.msfEmail.collectAsStateWithLifecycle()
         var emailState by remember {
             mutableStateOf("")
         }
@@ -61,17 +70,38 @@ fun SignInScreen() {
                     text = stringResource(id = R.string.label_email)
                 )
             },
+            isError = !emailValidation,
+            supportingText = {
+                if (!emailValidation) {
+                    Text(
+                        modifier = Modifier.fillMaxWidth(),
+                        text = stringResource(id = R.string.str_email_validate_error)
+                    )
+                }
+            },
+            trailingIcon = {
+                if (!emailValidation) {
+                    Icon(
+                        imageVector = Icons.Filled.Info,
+                        contentDescription = stringResource(id = R.string.str_email_error),
+                        tint = MaterialTheme.colorScheme.error
+                    )
+                }
+            },
             value = emailState,
             onValueChange = {
                 emailState = it
             },
             keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
-            keyboardActions = KeyboardActions(onNext = {
+            keyboardActions = KeyboardActions(
+                onNext = {
 
-            })
+                }
+            )
         )
 
         // Password field
+        val passwordValidation by signInViewModel.msfPassword.collectAsStateWithLifecycle()
         var passwordState by remember {
             mutableStateOf("")
         }
@@ -83,6 +113,24 @@ fun SignInScreen() {
                 Text(
                     text = stringResource(id = R.string.label_password)
                 )
+            },
+            isError = !passwordValidation,
+            supportingText = {
+                if (!passwordValidation) {
+                    Text(
+                        modifier = Modifier.fillMaxWidth(),
+                        text = stringResource(id = R.string.str_password_validate_error)
+                    )
+                }
+            },
+            trailingIcon = {
+                if (!passwordValidation) {
+                    Icon(
+                        imageVector = Icons.Filled.Info,
+                        contentDescription = stringResource(id = R.string.str_email_error),
+                        tint = MaterialTheme.colorScheme.error
+                    )
+                }
             },
             value = passwordState,
             onValueChange = {
@@ -99,7 +147,7 @@ fun SignInScreen() {
         Button(
             modifier = Modifier.fillMaxWidth(),
             onClick = {
-
+                signInViewModel.isValidateSuccessful(emailState, passwordState)
             }) {
             Text(
                 text = stringResource(id = R.string.label_sign_in)
