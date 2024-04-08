@@ -13,6 +13,10 @@
 
     <!--SignIn-->
     <string name="str_login_account">Login to your account!</string>
+    <string name="str_email_error">Email error</string>
+    <string name="str_password_error">Password error</string>
+    <string name="str_email_validate_error">Email cannot be empty!</string>
+    <string name="str_password_validate_error">Password cannot be empty!</string>
     <!--SignIn-->
 
     <!--Home-->
