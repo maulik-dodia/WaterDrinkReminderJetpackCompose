@@ -6,10 +6,14 @@
     <string name="label_name">Enter your name</string>
     <string name="label_email">Enter your email</string>
     <string name="label_password">Enter your password</string>
-    <string name="label_sign_up">SignUp</string>
+    <string name="label_sign_up">Sign Up</string>
     <string name="label_or">or</string>
-    <string name="label_sign_in">SignIn</string>
+    <string name="label_sign_in">Sign In</string>
     <!--SignUp-->
+
+    <!--SignIn-->
+    <string name="str_login_account">Login to your account!</string>
+    <!--SignIn-->
 
     <!--Home-->
     <string name="profile_img_small">Profile Image Small</string>
