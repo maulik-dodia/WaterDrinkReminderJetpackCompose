@@ -27,8 +27,7 @@ import com.waterdrinkreminderjetpackcompose.navigation.MainNavigation
 import com.waterdrinkreminderjetpackcompose.screen.History
 import com.waterdrinkreminderjetpackcompose.screen.Home
 import com.waterdrinkreminderjetpackcompose.screen.ProfileScreen
-import com.waterdrinkreminderjetpackcompose.screen.signin.SignInScreen
-import com.waterdrinkreminderjetpackcompose.screen.SignUpScreen
+import com.waterdrinkreminderjetpackcompose.screen.signup.SignUpScreen
 import com.waterdrinkreminderjetpackcompose.ui.theme.WaterDrinkReminderJetpackComposeTheme
 import com.waterdrinkreminderjetpackcompose.ui.theme.bottomNavBar
 
@@ -38,8 +37,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             WaterDrinkReminderJetpackComposeTheme {
                 //BottomNavBar()
-                //SignUpScreen()
-                SignInScreen()
+                SignUpScreen()
+                //SignInScreen()
             }
         }
     }
