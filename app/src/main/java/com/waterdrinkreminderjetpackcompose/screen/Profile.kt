@@ -35,7 +35,7 @@ import androidx.compose.ui.unit.dp
 import com.waterdrinkreminderjetpackcompose.R
 
 @Composable
-fun ProfileScreen() {
+fun Profile() {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -301,5 +301,5 @@ fun ProfileScreen() {
 @Preview(showBackground = true)
 @Composable
 fun Preview() {
-    ProfileScreen()
+    Profile()
 }
