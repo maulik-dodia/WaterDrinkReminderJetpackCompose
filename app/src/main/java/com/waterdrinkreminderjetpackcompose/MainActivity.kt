@@ -27,6 +27,7 @@ import com.waterdrinkreminderjetpackcompose.navigation.MainNavigation
 import com.waterdrinkreminderjetpackcompose.screen.History
 import com.waterdrinkreminderjetpackcompose.screen.Home
 import com.waterdrinkreminderjetpackcompose.screen.ProfileScreen
+import com.waterdrinkreminderjetpackcompose.screen.SignUpScreen
 import com.waterdrinkreminderjetpackcompose.ui.theme.WaterDrinkReminderJetpackComposeTheme
 import com.waterdrinkreminderjetpackcompose.ui.theme.bottomNavBar
 
@@ -35,7 +36,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             WaterDrinkReminderJetpackComposeTheme {
-                BottomNavBar()
+                //BottomNavBar()
+                SignUpScreen()
             }
         }
     }
@@ -103,9 +105,12 @@ fun BottomNavBar() {
     }) { paddingValues ->
         NavHost(
             navController = navController,
-            startDestination = MainNavigation.Home.screenName,
+            startDestination = MainNavigation.SignUp.screenName,
             modifier = Modifier.padding(paddingValues)
         ) {
+            composable(MainNavigation.SignUp.screenName) {
+                SignUpScreen()
+            }
             composable(MainNavigation.Home.screenName) {
                 Home()
             }

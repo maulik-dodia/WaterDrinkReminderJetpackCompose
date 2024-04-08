@@ -1,6 +1,16 @@
 <resources>
     <string name="app_name">WaterDrinkReminder-Jetpack-Compose</string>
 
+    <!--SignUp-->
+    <string name="label_create_account">Create your account!</string>
+    <string name="label_name">Enter your name</string>
+    <string name="label_email">Enter your email</string>
+    <string name="label_password">Enter your password</string>
+    <string name="label_sign_up">SignUp</string>
+    <string name="label_or">or</string>
+    <string name="label_sign_in">SignIn</string>
+    <!--SignUp-->
+
     <!--Home-->
     <string name="profile_img_small">Profile Image Small</string>
     <string name="label_good_morning">Good Morning</string>
