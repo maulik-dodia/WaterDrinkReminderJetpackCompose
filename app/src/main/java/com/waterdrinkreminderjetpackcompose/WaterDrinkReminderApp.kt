@@ -2,6 +2,8 @@ package com.waterdrinkreminderjetpackcompose
 
 import android.app.Application
 import com.waterdrinkreminderjetpackcompose.di.AppComponent
+import com.waterdrinkreminderjetpackcompose.di.AppModule
+import com.waterdrinkreminderjetpackcompose.di.DaggerAppComponent
 
 class WaterDrinkReminderApp : Application() {
 
@@ -10,6 +12,10 @@ class WaterDrinkReminderApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        //appComponent = Dagg
+        appComponent = DaggerAppComponent
+            .builder()
+            .appModule(AppModule(this))
+            .build()
+        appComponent.inject(this)
     }
 }
