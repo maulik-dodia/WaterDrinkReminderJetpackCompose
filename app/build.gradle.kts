@@ -76,6 +76,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.2")
 
-    implementation("com.google.dagger:dagger:2.42")
-    kapt("com.google.dagger:dagger-compiler:2.42")
+    implementation("com.google.dagger:dagger:2.50")
+    kapt("com.google.dagger:dagger-compiler:2.50")
 }

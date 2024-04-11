@@ -57,20 +57,6 @@ fun Profile() {
                     Text(text = "Store Data")
                 }, onClick = {
 
-                    val user = hashMapOf(
-                        "first" to "Ada",
-                        "last" to "Lovelace",
-                        "born" to 1815
-                    )
-
-                    db.collection("Maulik")
-                        .add(user)
-                        .addOnSuccessListener { documentReference ->
-                            Log.d("mk", "DocumentSnapshot added with ID: ${documentReference.id}")
-                        }
-                        .addOnFailureListener { e ->
-                            Log.w("mk", "Error adding document", e)
-                        }
                 }
             )
             Image(

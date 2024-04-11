@@ -10,7 +10,7 @@ activityCompose = "1.8.2"
 composeBom = "2023.08.00"
 googleServices = "4.4.1"
 firebaseFirestore = "24.11.0"
-kotlinPlugin = "2.0.0-Beta5"
+kotlinPlugin = "1.9.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }

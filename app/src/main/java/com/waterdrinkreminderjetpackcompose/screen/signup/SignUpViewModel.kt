@@ -1,9 +1,12 @@
 package com.waterdrinkreminderjetpackcompose.screen.signup
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.flow.MutableStateFlow
+import javax.inject.Inject
 
-class SignUpViewModel : ViewModel() {
+class SignUpViewModel @Inject constructor(private val firestore: FirebaseFirestore) : ViewModel() {
 
     private val _msfName = MutableStateFlow(true)
     val msfName = _msfName
@@ -29,5 +32,23 @@ class SignUpViewModel : ViewModel() {
             _msfEmail.value = true
             _msfPassword.value = true
         }
+    }
+
+    fun createData() {
+
+        val user = hashMapOf(
+            "first" to "Ada",
+            "last" to "Lovelace",
+            "born" to 1815
+        )
+
+        firestore.collection("Maulik")
+            .add(user)
+            .addOnSuccessListener { documentReference ->
+                Log.d("mk", "DocumentSnapshot added with ID: ${documentReference.id}")
+            }
+            .addOnFailureListener { e ->
+                Log.w("mk", "Error adding document", e)
+            }
     }
 }
